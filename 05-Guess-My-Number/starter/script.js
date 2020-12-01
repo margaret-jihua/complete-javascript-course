@@ -26,16 +26,9 @@ check.addEventListener('click', function() {
             document.querySelector('.highscore').textContent = highscore
         }
     }
-    else if (guess < answer) {
-        msg.textContent = 'Too small!'
-        myScore --
-        score.textContent = myScore
-        if (myScore <= 0) {
-            msg.textContent = '💥 You lost the game!'
-        }
-    }
-    else if (guess > answer) {
-        msg.textContent = 'Too Big!'
+    else if (guess !== answer) {
+        msg.textContent = 
+            guess < answer ? 'Too small!' : 'Too Big!'
         myScore --
         score.textContent = myScore
         if (myScore <= 0) {
